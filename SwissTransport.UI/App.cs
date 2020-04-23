@@ -52,9 +52,11 @@ namespace SwissTransport.UI
 
         private void BtnSearchConnections_Click(object sender, EventArgs e)
         {
-            dgvConnections.Rows.Clear();
+            var dateTime = new DateTime(dtpDate.Value.Year, dtpDate.Value.Month, dtpDate.Value.Day, dtpTime.Value.Hour, dtpTime.Value.Minute, 0);
 
-            var connections = _transportService.GetConnections(cmbFrom.Text, cmbTo.Text);
+            var connections = _transportService.GetConnections(cmbFrom.Text, cmbTo.Text, dateTime);
+
+            dgvConnections.Rows.Clear();
 
             foreach (var connection in connections)
             {

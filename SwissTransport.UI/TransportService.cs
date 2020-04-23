@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SwissTransport.UI
@@ -17,9 +18,9 @@ namespace SwissTransport.UI
             return _transport.GetStations(query).StationList.ConvertAll(s => s.Name);
         }
 
-        public List<Connection> GetConnections(string from, string to)
+        public List<Connection> GetConnections(string from, string to, DateTime dateTime)
         {
-            return _transport.GetConnections(from, to).ConnectionList;
+            return _transport.GetConnections(from, to, dateTime).ConnectionList;
         }
 
         public List<StationBoard> GetStationConnections(string stationName)

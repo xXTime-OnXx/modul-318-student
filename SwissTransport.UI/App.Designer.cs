@@ -41,10 +41,10 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFrom = new System.Windows.Forms.Label();
             this.cmbFrom = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.lblTo = new System.Windows.Forms.Label();
             this.cmbTo = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -226,7 +226,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Controls.Add(this.lblFrom, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.cmbFrom, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.dateTimePicker1, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.dtpDate, 0, 2);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -259,13 +259,13 @@
             this.cmbFrom.TabIndex = 1;
             this.cmbFrom.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Cmb_KeyUp);
             // 
-            // dateTimePicker1
+            // dtpDate
             // 
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 59);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(359, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpDate.Location = new System.Drawing.Point(3, 59);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(359, 20);
+            this.dtpDate.TabIndex = 2;
             // 
             // panel5
             // 
@@ -280,7 +280,7 @@
             // 
             this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Controls.Add(this.dateTimePicker2, 0, 2);
+            this.tableLayoutPanel8.Controls.Add(this.dtpTime, 0, 2);
             this.tableLayoutPanel8.Controls.Add(this.lblTo, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.cmbTo, 0, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -293,14 +293,14 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(365, 86);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
-            // dateTimePicker2
+            // dtpTime
             // 
-            this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(3, 59);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(359, 20);
-            this.dateTimePicker2.TabIndex = 3;
+            this.dtpTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpTime.Location = new System.Drawing.Point(3, 59);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.Size = new System.Drawing.Size(359, 20);
+            this.dtpTime.TabIndex = 3;
             // 
             // lblTo
             // 
@@ -625,8 +625,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn line;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpTime;
+        private System.Windows.Forms.DateTimePicker dtpDate;
     }
 }
 
