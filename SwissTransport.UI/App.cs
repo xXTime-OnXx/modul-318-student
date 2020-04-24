@@ -85,8 +85,8 @@ namespace SwissTransport.UI
 
         private void BtnGetStationBoard_Click(object sender, EventArgs e)
         {
-            if (!FormValidator.FormComponentsValid(new ComboBox[] { cmbFrom, cmbFrom },
-                new DateTimePicker[] { dtpDate, dtpTime }))
+            if (!FormValidator.FormComponentsValid(new ComboBox[] {cmbFrom, cmbFrom},
+                new DateTimePicker[] {dtpDate, dtpTime}))
             {
                 MessageBox.Show("Die Eingabefelder sind nicht korrekt ausgefüllt",
                     "Invalide Eingabe", MessageBoxButtons.OK, MessageBoxIcon.Warning);

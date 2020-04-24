@@ -48,6 +48,5 @@ namespace SwissTransport.UI
             var station = _transport.GetStations(stationName).StationList.First();
             return _transport.GetStationBoard(station.Name, station.Id).Entries;
         }
-
     }
 }
