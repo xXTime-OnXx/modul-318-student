@@ -52,12 +52,27 @@ namespace SwissTransport.UI
 
         private void BtnSearchConnections_Click(object sender, EventArgs e)
         {
-            var dateTime = new DateTime(dtpDate.Value.Year, dtpDate.Value.Month, dtpDate.Value.Day, dtpTime.Value.Hour, dtpTime.Value.Minute, 0);
+            if (!FormValidator.FormComponentsValid(new ComboBox[] {cmbFrom, cmbFrom},
+                new DateTimePicker[] {dtpDate, dtpTime}))
+            {
+                MessageBox.Show("Die Eingabefelder sind nicht korrekt ausgefüllt",
+                    "Invalide Eingabe", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var dateTime = new DateTime(dtpDate.Value.Year, dtpDate.Value.Month, dtpDate.Value.Day, dtpTime.Value.Hour,
+                dtpTime.Value.Minute, 0);
 
             var connections = _transportService.GetConnections(cmbFrom.Text, cmbTo.Text, dateTime);
 
-            dgvConnections.Rows.Clear();
+            if (connections.Count < 1)
+            {
+                MessageBox.Show("Es wurden keine Verbindungen anhand der Stationen und dem Zeitpunkt gefunden.",
+                    "Suche fehlgeschlagen", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            dgvConnections.Rows.Clear();
             foreach (var connection in connections)
             {
                 dgvConnections.Rows.Add(Convert.ToDateTime(connection.From.Departure).ToString("HH:mm"),
@@ -68,10 +83,24 @@ namespace SwissTransport.UI
 
         private void BtnGetStationBoard_Click(object sender, EventArgs e)
         {
-            dgvStationConnections.Rows.Clear();
+            if (!FormValidator.FormComponentsValid(new ComboBox[] { cmbFrom, cmbFrom },
+                new DateTimePicker[] { dtpDate, dtpTime }))
+            {
+                MessageBox.Show("Die Eingabefelder sind nicht korrekt ausgefüllt",
+                    "Invalide Eingabe", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             var stationBoards = _transportService.GetStationConnections(cmbStation.Text);
 
+            if (stationBoards.Count < 1)
+            {
+                MessageBox.Show("Es wurden keine Verbindungen anhand der eingegebenen Station gefunden",
+                    "Suche fehlgeschlagen", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            dgvStationConnections.Rows.Clear();
             foreach (var stationBoard in stationBoards)
             {
                 dgvStationConnections.Rows.Add(stationBoard.Number,
