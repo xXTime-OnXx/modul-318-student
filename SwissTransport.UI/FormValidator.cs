@@ -3,10 +3,19 @@ using System.Windows.Forms;
 
 namespace SwissTransport.UI
 {
+    /// <summary>
+    /// Used for validating ComboBoxes & DateTimePickers
+    /// </summary>
     public class FormValidator
     {
         private static readonly Regex Regex = new Regex("^[a-zA-Z0-9]*$");
 
+        /// <summary>
+        /// This method does null & alphanumeric checks
+        /// </summary>
+        /// <param name="comboBoxes"></param>
+        /// <param name="dateTimePickers"></param>
+        /// <returns></returns>
         public static bool FormComponentsValid(ComboBox[] comboBoxes = null, DateTimePicker[] dateTimePickers = null)
         {
             var comboBoxesValid = true;

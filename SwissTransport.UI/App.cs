@@ -39,6 +39,7 @@ namespace SwissTransport.UI
             cmb.Text = input;
             cmb.Select(input.Length, 0);
 
+            // ArgumentNullException gets thrown when service returns no stations
             try
             {
                 var stationNames = _transportService.GetStationsName(cmb.Text);
@@ -47,6 +48,7 @@ namespace SwissTransport.UI
             catch (ArgumentNullException ex)
             {
                 Console.WriteLine(ex);
+                cmb.Items.Clear();
             }
         }
 
